@@ -1,7 +1,9 @@
 from flask import Flask, request, jsonify
 from groq import Groq
 from dotenv import load_dotenv
-import requests
+import requests as r
+import re
+import base64
 import os
 import googlemaps
 
@@ -27,6 +29,14 @@ def analyze_image():
     
     base64_image = data['image']
 
+    image_format = 'jpeg'  # Default to JPEG
+    if base64_image.startswith('/9j/'):  # JPEG header in base64
+        image_format = 'jpeg'
+    elif base64_image.startswith('iVBORw0KGgo'):  # PNG header in base64
+        image_format = 'png'
+    else:
+        return jsonify({"error": "Unsupported image format"}), 400
+
     try:
         chat_completion = client.chat.completions.create(
             messages=[
@@ -37,7 +47,7 @@ def analyze_image():
                         {
                             "type": "image_url",
                             "image_url": {
-                                "url": f"data:image/jpeg;base64,{base64_image}",
+                                "url": f"data:image/{image_format};base64,{base64_image}",
                             },
                         },
                     ],
@@ -54,9 +64,8 @@ def analyze_image():
 
         lat = data['latitude']
         long = data['longitude']
-        radius = data['radius']
-        url = f"https://maps.googleapis.com/maps/api/place/nearbysearch/json?location={lat},{long}&radius={radius}&type={groqRequest}&keyword={groqRequest2}&key=AIzaSyDleO3ZLGxxRSEoyHdMkncJgor9o1ODYVA"
-        response = request.request("GET", url)
+        url = f"https://maps.googleapis.com/maps/api/place/nearbysearch/json?location={lat},{long}&radius=5000&type={groqRequest}&keyword={groqRequest2}&key=AIzaSyDleO3ZLGxxRSEoyHdMkncJgor9o1ODYVA"
+        response = r.request("GET", url)
         return response.text
 
     except Exception as e:
