@@ -64,7 +64,7 @@ def analyze_image():
 
         lat = data['latitude']
         long = data['longitude']
-        url = f"https://maps.googleapis.com/maps/api/place/nearbysearch/json?location={lat},{long}&radius=5000&type={groqRequest}&keyword={groqRequest2}&key=AIzaSyDleO3ZLGxxRSEoyHdMkncJgor9o1ODYVA"
+        url = f"https://maps.googleapis.com/maps/api/place/nearbysearch/json?location={lat},{long}&radius=5000&type={groqRequest}&keyword={groqRequest2}&key={maps_api_key}"
         response = r.request("GET", url)
         return response.text
 
