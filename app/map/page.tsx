@@ -1,4 +1,6 @@
 import Link from "next/link";
+import GoogleMapComponent from '../components/GoogleMapComponent';
+import Sidebar from "../components/Sidebar";
 
 async function file(formData: FormData) {
   "use server";
@@ -8,6 +10,21 @@ async function file(formData: FormData) {
 
 export default async function Home() {
   return (
+    <main>
+      <Sidebar />
+      <div className="right-sidebar">
+        <GoogleMapComponent />
+      </div>
+
+    </main>
+
+  );
+}
+
+
+function Form() {
+
+  return (
     <form className="file-form" action={file}>
       <label htmlFor="file">Photo</label>
       <input type="file" name="file" id="file"/>
@@ -15,6 +32,8 @@ export default async function Home() {
         Upload file
       </button>
     </form>
-  )
+  );
 }
+
+
 
