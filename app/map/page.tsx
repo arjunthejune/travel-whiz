@@ -1,6 +1,7 @@
 import Link from "next/link";
 import GoogleMapComponent from '../components/GoogleMapComponent';
 import Sidebar from "../components/Sidebar";
+import CurrentLocation from "../components/CurrentLocation";
 
 async function file(formData: FormData) {
   "use server";
@@ -8,14 +9,18 @@ async function file(formData: FormData) {
   console.log("File name:", file.name, "size:", file.size);
 }
 
+
+
+
+
 export default async function Home() {
   return (
     <main>
       <Sidebar />
       <div className="right-sidebar">
         <GoogleMapComponent />
+        
       </div>
-
     </main>
 
   );

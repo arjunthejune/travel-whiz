@@ -8,17 +8,24 @@ async function file(formData: FormData) {
   console.log("File name:", file.name, "size:", file.size);
 }
 
+
+function Form() {
+  return (
+    <input type="file" id="upload-attachment" accept="image/*"/>
+  );
+}
+
 export default async function Home() {
+
   return (
 
     
     <main>
-      
       <Sidebar />
 
       <div className="right-sidebar">
-
-
+        <h1 className="upload-title"> Upload Your File Here</h1>
+        <Form />
       </div>
     
     </main>
@@ -26,20 +33,4 @@ export default async function Home() {
 
   );
 }
-
-
-function Form() {
-
-  return (
-    <form className="file-form" action={file}>
-      <label htmlFor="file">Photo</label>
-      <input type="file" name="file" id="file"/>
-      <button type="submit" id="upload">
-        Upload file
-      </button>
-    </form>
-  );
-}
-
-
 
