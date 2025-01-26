@@ -3,19 +3,259 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
+  --background: #817c7c;
   --foreground: #171717;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
 
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
 }
+
+
+.top-home-page > * {
+  width: 100%;
+}
+
+.top-home-page {
+  flex-flow: row wrap;
+  background: #383432;
+  text-align: center;
+  width: 100%;
+  height: 860px;
+}
+
+.top-title {
+  color: white;
+  font-size: 130px;
+  font-weight: 500;
+  font-family: 'Courier New', Courier, monospace, bold;
+}
+
+.top-description {
+  color: white;
+  font-size: 30px;
+  font-weight: 200;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.front-image {
+  margin-top: 30;
+  margin-left: auto;
+  margin-right: auto;
+  width: 1036px;
+  height: 420px;
+}
+
+.button1 {
+  margin-top: 50;
+  font-size: 40px;
+  font-weight: 800;
+  width: 300px;
+  height: 150px;
+  border-radius: 15px;
+  color: darkblue;
+  background-color: #d89230;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1); 
+  transform-style: preserve-3d;
+
+}
+
+#enter-app img {
+  display: block;
+  height: 200px;  
+  width: 100px;
+}
+
+#enter-app {
+  background-image: url("/assets/upload.png");
+  background-size: 250px 250px;
+  height: 250px;  
+  width: 250px;
+}
+
+.bottom-home-page > * {
+  width: 100%;
+}
+
+.bottom-home-page {
+  flex-flow: row wrap;
+  background: #705151;
+  text-align: center;
+  width: 100%;
+}
+
+.bottom-description {
+
+  padding-top: 190;
+  padding-left: 100;
+  padding-right: 100;
+  padding-bottom: 50;
+  color: rgb(247, 247, 247);
+  font-size: 22px;
+  font-weight: 200;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+
+
+
+
+
+
+
+
+.left-sidebar {
+  float: left;
+  top: 0;
+  position: fixed;
+  height: 100%;
+  width: 60px;
+  background-color: rgb(255, 255, 255);
+  color: white;
+  padding-top: 10;
+  border-style: solid;
+  border-color: rgb(151, 151, 151);
+  border-width: 3px;
+  border-radius: 11px;
+}
+
+.sidebar-map {
+  margin-top: 50;
+  font-size: 10px;
+  font-weight: 800;
+  width: 50px;
+  height: 50px;
+  border-radius: 15px;
+  color: rgb(255, 255, 255);
+  background-color: #dfdfdf;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1); 
+  transform-style: preserve-3d;
+}
+
+#sidebar-map img {
+  display: block;
+  height: 40px;  
+  width: 40px;
+
+}
+
+#sidebar-map {
+  background-image: url("/assets/map.jpg");
+  background-size: 50px 50px;
+  height: 50px;  
+  width: 50px;
+}
+
+
+.sidebar-upload {
+  margin-top: 50;
+  font-size: 10px;
+  font-weight: 800;
+  width: 50px;
+  height: 50px;
+  border-radius: 15px;
+  color: rgb(255, 255, 255);
+  background-color: #dfdfdf;
+  box-shadow: 0 5px 5px rgba(2, 2, 2, 0.1); 
+  transform-style: preserve-3d;
+}
+
+#sidebar-upload img {
+  display: block;
+  height: 40px;  
+  width: 40px;
+
+}
+
+#sidebar-upload {
+  background-image: url("/assets/upload.png");
+  background-size: 50px 50px;
+  height: 50px;  
+  width: 50px;
+}
+
+
+.sidebar-home {
+  font-size: 10px;
+  font-weight: 800;
+  width: 50px;
+  height: 50px;
+  border-radius: 15px;
+  color: rgb(255, 255, 255);
+  background-color: #ececec;
+  box-shadow: 0 5px 5px rgba(50, 49, 49, 0.1); 
+  transform-style: preserve-3d;
+}
+
+#sidebar-home img {
+  display: block;
+  height: 40px;  
+  width: 40px;
+
+}
+
+#sidebar-home {
+  background-image: url("/assets/home.jpg");
+  background-size: 50px 50px;
+  height: 50px;  
+  width: 50px;
+}
+
+
+.right-sidebar {
+  margin-left: 58px;
+  border-style: solid;
+  border-color: rgb(151, 151, 151);
+  border-width: 3px;
+  border-radius: 5px;
+}
+
+
+.file-form{
+  font-size:20px;
+  font-weight: 400;
+  color: orange;
+}
+
+.upload-title {
+  color: white;
+  font-size: 100px;
+  font-weight: 500;
+  font-family: 'Courier New', Courier, monospace, bold;
+}
+
+
+.upload-attachment {
+  font-size: 10px;
+  font-weight: 800;
+  width: 300px;
+  height: 300px;
+  border-radius: 15px;
+  color: rgb(255, 255, 255);
+  background-color: #ececec;
+  box-shadow: 0 5px 5px rgba(50, 49, 49, 0.1); 
+  transform-style: preserve-3d;
+}
+
+#upload-attachment img {
+  display: block;
+  height: 300px;  
+  width: 300px;
+
+}
+
+#upload-attachment{
+  background-image: url("/assets/attachment.jpg");
+  background-size: 300px 300px;
+  height: 300px;  
+  width: 300px;
+}
+
+
+
+
